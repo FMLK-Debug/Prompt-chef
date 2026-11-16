@@ -11,8 +11,9 @@ No build step, no dependencies — just open it.
 
 **Look:** a vintage recipe book on a dark wooden desk — warm parchment cards,
 brown ink, brick-red headings, gold rules, and letterpress-style buttons.
-Georgia for reading, Courier for the prompt itself. No gradients, no glow, no
-animations.
+Georgia for reading, Courier for the prompt itself, and Verdana for the small
+labels and hints (kept at 12px or larger for legibility). No gradients, no
+glow, no animations.
 
 ## Run it
 

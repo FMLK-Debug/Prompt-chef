@@ -10,7 +10,7 @@
   --paper-2: #e8d5ad;
   --paper-3: #fbf3dc;
   --ink: #2b1d12;
-  --muted: #6b5a45;
+  --muted: #5a4937;
   --leather: #4a2f1d;
   --brick: #8f2d1f;
   --brick-dark: #6e2116;
@@ -18,6 +18,7 @@
   --gold-light: #e0c06a;
   --green: #3f5c3a;
   --line: #b79b6b;
+  --ui: Verdana, Arial, Helvetica, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -31,7 +32,7 @@ body {
   background-image:
     repeating-linear-gradient(45deg, rgba(255, 255, 255, .018) 0 1px, transparent 1px 6px);
   color: var(--ink);
-  font: 14px/1.5 Georgia, "Times New Roman", serif;
+  font: 15px/1.55 Georgia, "Times New Roman", serif;
 }
 
 button, input { font-family: inherit; }
@@ -99,8 +100,7 @@ a:hover { color: var(--brick-dark); }
 .tagline {
   margin: 4px 0 0;
   color: var(--gold-light);
-  font-size: 13px;
-  font-style: italic;
+  font: italic 13.5px/1.45 Georgia, "Times New Roman", serif;
 }
 
 .masthead__tools {
@@ -120,7 +120,7 @@ a:hover { color: var(--brick-dark); }
   border: 3px double var(--gold-light);
   border-radius: 50%;
   color: var(--gold-light);
-  font: bold 9px/1.25 "Courier New", Courier, monospace;
+  font: bold 10px/1.3 "Courier New", Courier, monospace;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: .08em;
@@ -134,9 +134,9 @@ a:hover { color: var(--brick-dark); }
   color: var(--ink);
   border: 1px solid var(--line);
   box-shadow: 2px 2px 0 rgba(0, 0, 0, .25);
-  font: 10.5px/1.5 "Courier New", Courier, monospace;
+  font: 12px/1.5 var(--ui);
   text-transform: uppercase;
-  letter-spacing: .05em;
+  letter-spacing: .02em;
 }
 
 /* ---------- Three-column kitchen ---------- */
@@ -164,7 +164,7 @@ a:hover { color: var(--brick-dark); }
 
 .panel {
   background-color: var(--paper);
-  background-image: radial-gradient(rgba(139, 111, 71, .12) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(139, 111, 71, .06) 1px, transparent 1px);
   background-size: 7px 7px;
   border: 1px solid var(--line);
   box-shadow:
@@ -180,16 +180,14 @@ a:hover { color: var(--brick-dark); }
 
 .panel__head h2 {
   margin: 0;
-  font: bold 17px/1.25 Georgia, "Times New Roman", serif;
+  font: bold 18px/1.25 Georgia, "Times New Roman", serif;
   color: var(--brick);
-  font-variant: small-caps;
-  letter-spacing: .04em;
+  letter-spacing: .01em;
 }
 
 .panel__hint {
-  margin: 2px 0 0;
-  font-size: 11.5px;
-  font-style: italic;
+  margin: 3px 0 0;
+  font: 12px/1.4 var(--ui);
   color: var(--muted);
 }
 
@@ -211,7 +209,7 @@ a:hover { color: var(--brick-dark); }
   background: none;
   border: 0;
   color: var(--brick);
-  font: italic 11.5px Georgia, "Times New Roman", serif;
+  font: bold 12.5px var(--ui);
   text-decoration: underline;
   text-decoration-style: dotted;
   cursor: pointer;
@@ -263,15 +261,15 @@ a:hover { color: var(--brick-dark); }
 
 .ingredient__name {
   display: block;
+  font-size: 15px;
   font-weight: bold;
   color: var(--brick);
-  font-variant: small-caps;
-  letter-spacing: .03em;
+  letter-spacing: .01em;
 }
 
 .ingredient__desc {
   display: block;
-  font-size: 11px;
+  font: 12px/1.45 var(--ui);
   color: var(--muted);
 }
 
@@ -301,8 +299,7 @@ a:hover { color: var(--brick-dark); }
   padding: 9px 10px;
   background: rgba(201, 162, 39, .12);
   border-top: 1px dashed var(--line);
-  font-size: 11px;
-  font-style: italic;
+  font: 12px/1.5 var(--ui);
   color: var(--muted);
 }
 
@@ -347,15 +344,14 @@ a:hover { color: var(--brick-dark); }
 .pot__empty-title {
   margin: 6px 0 2px;
   color: var(--brick);
+  font-size: 15px;
   font-weight: bold;
-  font-variant: small-caps;
-  letter-spacing: .04em;
+  letter-spacing: .01em;
 }
 
 .pot__empty-sub {
   margin: 0;
-  font-size: 12px;
-  font-style: italic;
+  font: 12.5px/1.4 var(--ui);
   color: var(--muted);
 }
 
@@ -397,10 +393,9 @@ a:hover { color: var(--brick-dark); }
   display: block;
   margin-bottom: 2px;
   color: var(--brick);
-  font-size: 11px;
-  font-weight: bold;
-  font-variant: small-caps;
-  letter-spacing: .04em;
+  font: bold 11.5px/1.35 var(--ui);
+  text-transform: uppercase;
+  letter-spacing: .05em;
 }
 
 .pot-item__input {
@@ -410,7 +405,7 @@ a:hover { color: var(--brick-dark); }
   color: var(--ink);
   border: 1px solid var(--line);
   box-shadow: inset 1px 1px 0 rgba(107, 74, 47, .22);
-  font: 13px/1.4 "Courier New", Courier, monospace;
+  font: 14px/1.5 "Courier New", Courier, monospace;
 }
 
 .pot-item__input:focus {
@@ -419,16 +414,16 @@ a:hover { color: var(--brick-dark); }
   outline-offset: -3px;
 }
 
-.pot-item__input::placeholder { color: #8a7b63; }
+.pot-item__input::placeholder { color: #6d5c47; }
 
 .pot-item__remove {
   flex: 0 0 auto;
-  padding: 2px 7px;
+  padding: 3px 8px;
   background: var(--paper-2);
   color: var(--ink);
   border: 1px solid var(--leather);
   box-shadow: 2px 2px 0 var(--leather);
-  font: bold 11px Georgia, "Times New Roman", serif;
+  font: 12px var(--ui);
   cursor: pointer;
 }
 
@@ -454,8 +449,7 @@ a:hover { color: var(--brick-dark); }
   padding: 10px;
   background: rgba(251, 243, 220, .55);
   border: 1px dashed var(--line);
-  font-size: 12px;
-  font-style: italic;
+  font: 12.5px/1.45 var(--ui);
   color: var(--muted);
 }
 
@@ -481,7 +475,7 @@ a:hover { color: var(--brick-dark); }
 .recipe__title {
   margin: 0;
   color: var(--brick);
-  font-size: 12.5px;
+  font-size: 13.5px;
   font-weight: bold;
   overflow-wrap: anywhere;
 }
@@ -491,7 +485,7 @@ a:hover { color: var(--brick-dark); }
   flex-wrap: wrap;
   gap: 7px;
   margin-top: 4px;
-  font: 10px/1.4 "Courier New", Courier, monospace;
+  font: 12px/1.55 var(--ui);
   color: var(--muted);
 }
 
@@ -505,12 +499,12 @@ a:hover { color: var(--brick-dark); }
 }
 
 .recipe__btn {
-  padding: 1px 6px;
+  padding: 3px 8px;
   background: var(--paper-2);
   color: var(--ink);
   border: 1px solid var(--leather);
   box-shadow: 1px 1px 0 var(--leather);
-  font: 10.5px Georgia, "Times New Roman", serif;
+  font: 12px var(--ui);
   cursor: pointer;
 }
 
@@ -537,14 +531,14 @@ a:hover { color: var(--brick-dark); }
   margin: 0;
   padding: 10px;
   color: var(--ink);
-  font: 13px/1.6 "Courier New", Courier, monospace;
+  font: 14px/1.6 "Courier New", Courier, monospace;
   white-space: pre-wrap;
   word-break: break-word;
 }
 
 .plate__text:empty::before {
   content: "Your prompt will appear here.";
-  color: #8a7b63;
+  color: #6d5c47;
   font-style: italic;
 }
 
@@ -566,10 +560,9 @@ a:hover { color: var(--brick-dark); }
 
 .flavor__label {
   color: var(--brick);
-  font-size: 11px;
-  font-weight: bold;
-  font-variant: small-caps;
-  letter-spacing: .08em;
+  font: bold 11.5px/1.35 var(--ui);
+  text-transform: uppercase;
+  letter-spacing: .05em;
 }
 
 .flavor__badge {
@@ -577,9 +570,9 @@ a:hover { color: var(--brick-dark); }
   background: var(--paper-2);
   color: var(--ink);
   border: 3px double currentColor;
-  font: bold 10px/1.4 "Courier New", Courier, monospace;
+  font: bold 11.5px/1.5 var(--ui);
   text-transform: uppercase;
-  letter-spacing: .06em;
+  letter-spacing: .04em;
 }
 
 .flavor__track {
@@ -607,8 +600,7 @@ a:hover { color: var(--brick-dark); }
 
 .flavor__note {
   margin: 4px 0 0;
-  font-size: 11.5px;
-  font-style: italic;
+  font: 12.5px/1.5 var(--ui);
   color: var(--muted);
 }
 
@@ -646,7 +638,7 @@ a:hover { color: var(--brick-dark); }
   color: var(--ink);
   border: 2px solid var(--leather);
   box-shadow: 3px 3px 0 var(--leather);
-  font: bold 12.5px Georgia, "Times New Roman", serif;
+  font: bold 12.5px var(--ui);
   cursor: pointer;
 }
 
@@ -685,7 +677,7 @@ a:hover { color: var(--brick-dark); }
 
 .btn[disabled] {
   background: #e6dcc2;
-  color: #8a7b63;
+  color: #6a5944;
   border-color: #a99672;
   box-shadow: none;
   cursor: not-allowed;
@@ -703,9 +695,8 @@ a:hover { color: var(--brick-dark); }
 .footer p {
   margin: 0;
   color: var(--gold-light);
-  font-size: 11.5px;
-  font-style: italic;
-  letter-spacing: .02em;
+  font: 12.5px/1.5 var(--ui);
+  letter-spacing: .01em;
 }
 
 /* ---------- Toast ---------- */
@@ -720,7 +711,7 @@ a:hover { color: var(--brick-dark); }
   color: var(--paper);
   border: 1px solid var(--gold);
   box-shadow: 4px 4px 0 rgba(0, 0, 0, .35);
-  font: bold 12.5px Georgia, "Times New Roman", serif;
+  font: bold 13px var(--ui);
   opacity: 0;
   visibility: hidden;
   transform: translateX(-50%);
