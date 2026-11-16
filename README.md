@@ -76,6 +76,8 @@ The meter tells you which rule tripped in plain language underneath the bar, so
 - **Save to Cookbook** — files the current recipe under its Task, with its
   flavor badge and word count. The Cookbook keeps the last 40 and persists them
   in `localStorage`; each entry can be loaded back, copied, or deleted.
+  A fresh browser starts with five worked examples already in the cookbook —
+  open one to see a complete, "Perfect" recipe without typing anything.
 
 ## Project documents
 

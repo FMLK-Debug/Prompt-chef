@@ -151,17 +151,20 @@ What the model does not know:
 
 ## 2-Minute Live Demo Script
 
-1. Open the app (empty pot, meter says **Bland**).
-2. Say: *"The pot is empty, and the meter tells me exactly what to do."*
-3. Click **Task**, type: `Explain how a black hole forms.`
-4. Say: *"Still Bland — a task alone is not enough."*
+1. Open the app (empty pot, meter says **Bland**). Point at the **Cookbook**:
+   *"Five example recipes are already saved here."*
+2. Click **Load** on **"Explain a black hole to kids"** — all six fields fill,
+   the prompt appears, and the meter turns **Perfect**.
+3. Say: *"Ye ek complete prompt hai — 6 ingredients, Perfect score."*
+4. Click **Clear pot**, then build one from scratch: click **Task**, type
+   `Explain how a black hole forms.` Say: *"Still Bland — a task alone is not enough."*
 5. Add **Role** (`A patient but witty tour guide`), **Context**
    (`10-year-olds on a school trip`), **Format** (`3 bullets`).
 6. Say: *"Now it flips to Perfect. Four ingredients and a task."*
 7. Point at the composed prompt and read the first two lines aloud.
-8. Click **Surprise Me**, then **Save to Cookbook**, then reload the page.
-9. Say: *"The cookbook persists, so this becomes a personal prompt library."*
-10. Click **Serve** (or Ctrl+Enter) to copy the prompt.
+8. Click **Serve** (or Ctrl+Enter) to copy the prompt.
+9. Click **Surprise Me**, then **Save to Cookbook**, then reload the page.
+10. Say: *"The cookbook persists, so this becomes a personal prompt library."*
 
 **If the projector fails:** run `python3 -m http.server 8000` in the
 `prompt-chef` folder and open `http://localhost:8000` in the browser. Screenshots

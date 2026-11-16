@@ -74,6 +74,84 @@ function normaliseCookbook(entries) {
     }));
 }
 
+/* ---------- Example recipes (show up in a fresh cookbook) ---------- */
+
+const EXAMPLE_RECIPES = [
+  {
+    id: 'example-black-hole',
+    title: 'Explain a black hole to kids',
+    stamp: '🎯',
+    values: {
+      role: 'A patient but witty tour guide at a science museum',
+      context: 'Visitors are 10-year-olds on a school field trip',
+      task: 'Explain how a black hole forms and why it is so weird',
+      format: 'A 3-bullet list, one surprising fact per bullet',
+      tone: 'Playful and curious, like a big sibling explaining',
+      constraints: 'Under 120 words, no emojis, end with a question'
+    }
+  },
+  {
+    id: 'example-password-email',
+    title: 'Write a password reset email',
+    stamp: '🎯',
+    values: {
+      role: 'A friendly IT support engineer',
+      context: 'Writing to a non-technical employee who forgot their password',
+      task: 'Write a password reset email with clear steps',
+      format: 'A subject line, 3 numbered steps, and one support contact line',
+      tone: 'Calm, helpful and reassuring',
+      constraints: 'No jargon, under 100 words, never ask for the password'
+    }
+  },
+  {
+    id: 'example-phishing',
+    title: 'Spot a phishing email',
+    stamp: '🎯',
+    values: {
+      role: 'A cybersecurity trainer',
+      context: 'Explaining email safety to elderly parents who use email every day',
+      task: 'Explain how to spot a phishing email',
+      format: '3 warning signs, then 1 action to take',
+      tone: 'Simple, patient and not scary',
+      constraints: 'Under 90 words, no technical terms'
+    }
+  },
+  {
+    id: 'example-python-plan',
+    title: '7-day Python revision plan',
+    stamp: '🎯',
+    values: {
+      role: 'An experienced computer science tutor',
+      context: 'A first-year student with 7 days left before a Python basics exam',
+      task: 'Create a 7-day revision plan for Python basics',
+      format: 'A table with Day, Topic and a 30-minute task',
+      tone: 'Encouraging but realistic',
+      constraints: '2 hours per day, one rest day, no new topics after day 5'
+    }
+  },
+  {
+    id: 'example-coffee-caption',
+    title: 'Coffee shop Instagram caption',
+    stamp: '🎯',
+    values: {
+      role: 'A witty social media manager for a campus coffee shop',
+      context: 'Posting a photo of cold coffee on a rainy Monday',
+      task: 'Write an Instagram caption that makes students want to visit',
+      format: 'One short caption and 3 hashtags',
+      tone: 'Fun, warm and slightly dramatic',
+      constraints: "Under 40 words, no clichés like 'best coffee in town'"
+    }
+  }
+];
+
+EXAMPLE_RECIPES.forEach((r) => {
+  const prompt = buildPrompt(r.values).trim();
+  r.filled = 6;
+  r.words = prompt ? prompt.split(/\s+/).length : 0;
+  r.level = 'perfect';
+  r.time = 'Example';
+});
+
 const state = {
   pot: {},                                  // { role: 'text', ... } — only keys sitting in the pot
   cookbook: normaliseCookbook(loadJSON('prompt-chef.cookbook.v1', []))
@@ -803,8 +881,16 @@ renderCookbook();
 wireDragAndDrop();
 wireEvents();
 
+// A fresh browser starts with five worked examples in the cookbook.
+const storedCookbook = loadJSON('prompt-chef.cookbook.v1', null);
+if (storedCookbook === null) {
+  state.cookbook = normaliseCookbook(EXAMPLE_RECIPES);
+  saveJSON('prompt-chef.cookbook.v1', state.cookbook);
+  renderCookbook();
+}
+
 // First-time visitors get a taste of what this thing does.
-if (!state.cookbook.length && !Object.keys(state.pot).length) {
+if (storedCookbook === null && !Object.keys(state.pot).length) {
   addIngredient('task');
   addIngredient('tone');
 }

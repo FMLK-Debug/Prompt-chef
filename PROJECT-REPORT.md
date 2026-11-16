@@ -200,6 +200,10 @@ the "Perfect / Bland / Too spicy" behaviour is a specification, not a vibe.
 
 **Live demo:** https://fmlk-debug.github.io/Prompt-chef/
 
+The **Cookbook** starts with five worked example recipes (black hole for kids,
+password reset email, phishing warning signs, 7-day Python plan, coffee-shop
+caption), so a fresh browser never opens to an empty shelf.
+
 1. Open the app. The pot is empty and the meter reads **Bland** with the note
    "The pot is empty — add an ingredient to start."
 2. Add **Task** only: "Explain how a black hole forms." The meter improves but

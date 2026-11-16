@@ -204,6 +204,14 @@ for (let i = 0; i < 25; i++) {
 }
 check('25 random recipes all filled six slots', Object.keys(state.pot).length === 6);
 
+console.log('\n- example cookbook -');
+
+eq('fresh cookbook seeds five examples', state.cookbook.length, 5);
+check('every example is marked Example', state.cookbook.every((r) => r.time === 'Example'));
+check('every example is Perfect', state.cookbook.every((r) => r.level === 'perfect'));
+eq('examples are persisted once', JSON.parse(localStorage.getItem('prompt-chef.cookbook.v1')).length, 5);
+check('cookbook hint shows the five examples', els.cookbookHint.textContent.includes('5 saved recipes'));
+
 console.log('\n- cookbook -');
 
 state.cookbook = [];
