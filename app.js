@@ -178,6 +178,7 @@ const els = {
   save: $('#save'),
   cookbookList: $('#cookbook-list'),
   cookbookHint: $('#cookbook-hint'),
+  loadExamples: $('#load-examples'),
   toast: $('#toast'),
   live: $('#kitchen-live')
 };
@@ -486,6 +487,20 @@ function loadRecipe(id) {
   fillPrompt(entry.values);
   els.output.scrollIntoView({ behavior: 'smooth', block: 'center' });
   toast('Recipe back on the heat 🔥');
+}
+
+/** Puts the built-in examples back on the shelf, without duplicates. */
+function loadExamples() {
+  const have = new Set(state.cookbook.map((r) => r.id));
+  const fresh = EXAMPLE_RECIPES.filter((r) => !have.has(r.id));
+  if (!fresh.length) {
+    toast('Examples are already on the shelf 📖');
+    return;
+  }
+  state.cookbook = normaliseCookbook([...fresh, ...state.cookbook]).slice(0, 40);
+  saveJSON('prompt-chef.cookbook.v1', state.cookbook);
+  renderCookbook();
+  toast('Examples added to the cookbook 📖');
 }
 
 function deleteRecipe(id) {
@@ -846,6 +861,7 @@ function wireEvents() {
   // Buttons
   els.serve.addEventListener('click', serve);
   els.save.addEventListener('click', saveRecipe);
+  els.loadExamples.addEventListener('click', loadExamples);
   els.surprise.addEventListener('click', surpriseMe);
 
   // Cookbook
@@ -881,16 +897,11 @@ renderCookbook();
 wireDragAndDrop();
 wireEvents();
 
-// A fresh browser starts with five worked examples in the cookbook.
-const storedCookbook = loadJSON('prompt-chef.cookbook.v1', null);
-if (storedCookbook === null) {
+// Seed the cookbook once. The "load examples" button can restore it later.
+const seededVersion = loadJSON('prompt-chef.seeded.v1', null);
+if (!state.cookbook.length && seededVersion !== 'v1') {
   state.cookbook = normaliseCookbook(EXAMPLE_RECIPES);
   saveJSON('prompt-chef.cookbook.v1', state.cookbook);
+  saveJSON('prompt-chef.seeded.v1', 'v1');
   renderCookbook();
-}
-
-// First-time visitors get a taste of what this thing does.
-if (storedCookbook === null && !Object.keys(state.pot).length) {
-  addIngredient('task');
-  addIngredient('tone');
 }

@@ -212,6 +212,14 @@ check('every example is Perfect', state.cookbook.every((r) => r.level === 'perfe
 eq('examples are persisted once', JSON.parse(localStorage.getItem('prompt-chef.cookbook.v1')).length, 5);
 check('cookbook hint shows the five examples', els.cookbookHint.textContent.includes('5 saved recipes'));
 
+console.log('\n- example loader -');
+
+state.cookbook = [];
+loadExamples();
+eq('loadExamples restores five recipes', state.cookbook.length, 5);
+loadExamples();
+eq('loadExamples does not duplicate', state.cookbook.length, 5);
+
 console.log('\n- cookbook -');
 
 state.cookbook = [];

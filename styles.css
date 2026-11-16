@@ -193,6 +193,18 @@ a:hover { color: var(--brick-dark); }
   color: var(--muted);
 }
 
+.panel__head-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.panel__head-row .link-btn {
+  flex: 0 0 auto;
+  margin-left: 0;
+}
+
 .link-btn {
   padding: 0;
   margin-left: 6px;

@@ -79,6 +79,8 @@ The meter tells you which rule tripped in plain language underneath the bar, so
   in `localStorage`; each entry can be loaded back, copied, or deleted.
   A fresh browser starts with five worked examples already in the cookbook —
   open one to see a complete, "Perfect" recipe without typing anything.
+  If the shelf is ever empty, **load examples** in the Cookbook header puts
+  them straight back.
 
 ## Project documents
 

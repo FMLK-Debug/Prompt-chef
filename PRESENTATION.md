@@ -153,6 +153,7 @@ What the model does not know:
 
 1. Open the app (empty pot, meter says **Bland**). Point at the **Cookbook**:
    *"Five example recipes are already saved here."*
+   *(If the shelf is empty, click **load examples** first.)*
 2. Click **Load** on **"Explain a black hole to kids"** — all six fields fill,
    the prompt appears, and the meter turns **Perfect**.
 3. Say: *"Ye ek complete prompt hai — 6 ingredients, Perfect score."*
