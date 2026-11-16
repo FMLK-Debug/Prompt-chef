@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Prompt Chef — cook up great AI prompts</title>
+<meta name="description" content="A neon-lit kitchen for building well-written AI prompts: pick your ingredients, watch the flavor meter, serve it hot." />
+<meta name="theme-color" content="#07040f" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Chakra+Petch:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>" />
+</head>
+<body>
+
+<!-- Confetti lives on its own canvas, above everything, never eats clicks -->
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<div class="kitchen-wrap">
+
+  <header class="masthead">
+    <div class="masthead__brand">
+      <span class="logo" aria-hidden="true">👨‍🍳</span>
+      <div>
+        <h1>Prompt&nbsp;Chef</h1>
+        <p class="tagline">Gather your ingredients. Cook up a great prompt.</p>
+      </div>
+    </div>
+    <div class="masthead__tools">
+      <span class="chip chip--order">Protocol: Role → Context → Task → Format → Tone → Limits</span>
+    </div>
+  </header>
+
+  <main class="kitchen">
+
+    <!-- ───────────── PANTRY ───────────── -->
+    <section class="panel pantry" aria-labelledby="pantry-title">
+      <div class="panel__head">
+        <h2 id="pantry-title"><span aria-hidden="true">🧺</span> The Pantry</h2>
+        <p class="panel__hint">Click a card, or drag it into the pot.</p>
+      </div>
+
+      <ul class="pantry__list" id="pantry-list"><!-- built by app.js --></ul>
+
+      <p class="pantry__foot">
+        <span aria-hidden="true">💡</span> Great prompts are just good ingredients in the right order.
+      </p>
+    </section>
+
+    <!-- ───────────── STATION (pot + cookbook) ───────────── -->
+    <div class="station">
+
+      <section class="panel pot" id="pot" aria-labelledby="pot-title">
+        <div class="panel__head">
+          <h2 id="pot-title"><span aria-hidden="true">🍲</span> Cooking Pot</h2>
+          <p class="panel__hint">
+            <span id="pot-count">0 / 6</span> ingredients simmering
+            <button type="button" class="link-btn" id="clear-pot">clear pot</button>
+          </p>
+        </div>
+
+        <div class="pot__drop" id="pot-drop" data-empty="true">
+          <div class="pot__steam" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="pot__empty" id="pot-empty">
+            <span class="pot__empty-icon" aria-hidden="true">🥄</span>
+            <p class="pot__empty-title">Signal: none</p>
+            <p class="pot__empty-sub">Drop an ingredient here to power up the prompt.</p>
+          </div>
+          <ul class="pot__items" id="pot-items"></ul>
+        </div>
+      </section>
+
+      <section class="panel cookbook" aria-labelledby="cookbook-title">
+        <div class="panel__head">
+          <h2 id="cookbook-title"><span aria-hidden="true">📖</span> Cookbook</h2>
+          <p class="panel__hint" id="cookbook-hint">Saved recipes live here.</p>
+        </div>
+        <ul class="cookbook__list" id="cookbook-list"></ul>
+      </section>
+
+    </div>
+
+    <!-- ───────────── PREVIEW / SERVE ───────────── -->
+    <section class="panel preview" aria-labelledby="preview-title">
+      <div class="panel__head">
+        <h2 id="preview-title"><span aria-hidden="true">📋</span> Your Prompt</h2>
+        <p class="panel__hint"><span id="word-count">0</span> words</p>
+      </div>
+
+      <div class="plate">
+        <pre class="plate__text" id="prompt-output" tabindex="0"></pre>
+      </div>
+
+      <div class="flavor" id="flavor" data-level="bland">
+        <div class="flavor__row">
+          <span class="flavor__label">Flavor Meter</span>
+          <span class="flavor__badge" id="flavor-badge">Bland</span>
+        </div>
+        <div class="flavor__track" aria-hidden="true">
+          <div class="flavor__fill" id="flavor-fill"></div>
+          <div class="flavor__tick" style="left:75%"></div>
+        </div>
+        <p class="flavor__note" id="flavor-note">Add a Task to get things simmering.</p>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn btn--primary" id="serve">
+          <span aria-hidden="true">🍽️</span> Serve
+        </button>
+        <button type="button" class="btn btn--ghost" id="surprise">
+          <span aria-hidden="true">🎲</span> Surprise Me
+        </button>
+        <button type="button" class="btn btn--quiet" id="save">
+          <span aria-hidden="true">📖</span> Save to Cookbook
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Signal stable · neon never sleeps · built with caffeine and suspiciously good wording <span aria-hidden="true">🥄</span></p>
+  </footer>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" aria-hidden="true"></div>
+
+<!-- Announced only when something actually changes, not on every keystroke -->
+<p class="sr-only" id="kitchen-live" role="status" aria-live="polite"></p>
+
+<script src="app.js"></script>
+</body>
+</html>
