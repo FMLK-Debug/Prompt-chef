@@ -2,6 +2,17 @@
 
 **Project Report**
 
+| | |
+|---|---|
+| **Name** | Akshay |
+| **Roll No** | 25BCON2394 |
+| **Section** | SI |
+| **Class** | Prompt Engineering |
+| **University** | JECRC University |
+| **Program** | B.Tech CSE (Cyber Security) |
+| **In collaboration with** | EC-Council, USA |
+| **Date** | November 2026 |
+
 ---
 
 ## 1. Abstract

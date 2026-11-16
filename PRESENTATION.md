@@ -11,8 +11,13 @@ say them out loud.
 **Prompt Chef**
 *An interactive workbench for prompt engineering*
 
-- Name, roll number, class
-- Subject / date
+- **Name:** Akshay
+- **Roll No:** 25BCON2394
+- **Section:** SI
+- **Class:** Prompt Engineering
+- **University:** JECRC University
+- **Program:** B.Tech CSE (Cyber Security) — in collaboration with EC-Council, USA
+- **Date:** November 2026
 
 **Speaker note:**
 > "Good morning. My project is called Prompt Chef. It is a small web app that

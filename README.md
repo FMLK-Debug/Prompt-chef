@@ -82,6 +82,7 @@ The meter tells you which rule tripped in plain language underneath the bar, so
 | `PROJECT-REPORT.md` | Full project report — problem, framework, design, testing, future scope |
 | `PRESENTATION.md` | 7-slide presentation content with speaker notes and a demo script |
 | `VIVA-QA.md` | 15 likely viva questions with short answers, plus a code walkthrough |
+| `Prompt-Chef-Presentation.pptx` | Ready-to-present 7-slide deck with student details filled in |
 
 ## Accessibility & responsiveness
 
