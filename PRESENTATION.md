@@ -18,6 +18,7 @@ say them out loud.
 - **University:** JECRC University
 - **Program:** B.Tech CSE (Cyber Security) — in collaboration with EC-Council, USA
 - **Date:** November 2026
+- **Live demo:** https://fmlk-debug.github.io/Prompt-chef/
 
 **Speaker note:**
 > "Good morning. My project is called Prompt Chef. It is a small web app that
@@ -78,6 +79,7 @@ What the model does not know:
 - Pot: fill the fields, watch the prompt compose in real time
 - Flavour meter: 🌶️ Too spicy · 😋 Perfect · 😐 Bland, with a reason
 - Cookbook: save, reload, copy, delete prompts
+- **Live demo:** https://fmlk-debug.github.io/Prompt-chef/
 
 **Speaker note:**
 > "This is the app. You pick an ingredient, fill in an example, and the prompt

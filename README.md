@@ -2,6 +2,8 @@
 
 [![tests](https://github.com/FMLK-Debug/Prompt-chef/actions/workflows/test.yml/badge.svg)](https://github.com/FMLK-Debug/Prompt-chef/actions/workflows/test.yml)
 
+**Live demo:** https://fmlk-debug.github.io/Prompt-chef/
+
 A single-page kitchen for building well-written AI prompts. Pick your ingredients
 from the pantry, drop them in the pot, watch the flavor meter, and serve.
 
