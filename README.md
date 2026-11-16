@@ -9,9 +9,10 @@ from the pantry, drop them in the pot, watch the flavor meter, and serve.
 
 No build step, no dependencies — just open it.
 
-**Look:** a simple late-90s desktop — gray page, white panels raised with
-beveled borders, navy headings in Times New Roman, Verdana body text, and
-classic blue underlined links. No gradients, no glow, no animations.
+**Look:** a vintage recipe book on a dark wooden desk — warm parchment cards,
+brown ink, brick-red headings, gold rules, and letterpress-style buttons.
+Georgia for reading, Courier for the prompt itself. No gradients, no glow, no
+animations.
 
 ## Run it
 
