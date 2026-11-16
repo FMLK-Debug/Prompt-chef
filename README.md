@@ -9,9 +9,9 @@ from the pantry, drop them in the pot, watch the flavor meter, and serve.
 
 No build step, no dependencies — just open it.
 
-**Look:** neon night kitchen — synthwave grid, scanlines, and magenta/cyan/lime
-glow on near-black. Orbitron for headings, Chakra Petch for text, Share Tech Mono
-for the prompt itself.
+**Look:** a simple late-90s desktop — gray page, white panels raised with
+beveled borders, navy headings in Times New Roman, Verdana body text, and
+classic blue underlined links. No gradients, no glow, no animations.
 
 ## Run it
 
@@ -96,8 +96,7 @@ The meter tells you which rule tripped in plain language underneath the bar, so
   buttons carry their own labels.
 - Status changes are announced through a screen-reader-only live region that
   dedupes itself, so typing doesn't flood a screen reader.
-- Visible focus rings, and `prefers-reduced-motion` turns off the steam, the
-  confetti wiggles and the transitions.
+- Visible focus rings, and the interface uses solid colours only — no glow and
+  no animation is required to use the app.
 - All text clears WCAG AA (4.5:1) against the panel it sits on, including
-  input placeholders — neon glow is decoration, never the only thing carrying
-  contrast.
+  input placeholders — decoration is never the only thing carrying contrast.
