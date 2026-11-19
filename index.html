@@ -4,12 +4,50 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Prompt Chef — cook up great AI prompts</title>
-<meta name="description" content="A vintage recipe-book workbench for building well-written AI prompts: pick your ingredients, watch the flavor meter, serve it hot." />
-<meta name="theme-color" content="#2a1f16" />
-<link rel="stylesheet" href="styles.css?v=5" />
+<meta name="description" content="A modern signal workbench for building well-written AI prompts: pick your ingredients, watch the flavor meter, serve it hot." />
+<meta name="theme-color" content="#070511" />
+<meta name="color-scheme" content="dark" />
+<link rel="stylesheet" href="styles.css?v=6" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>" />
 </head>
 <body>
+
+<!-- Moving infinity + frequency lines, purely decorative -->
+<div class="ambient" aria-hidden="true">
+  <svg class="ambient__infinity" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="infinity-stroke" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#ff6aa8" />
+        <stop offset=".5" stop-color="#a06bff" />
+        <stop offset="1" stop-color="#5bc8ff" />
+      </linearGradient>
+    </defs>
+    <path class="ambient__infinity-base"
+          d="M600 300 C450 120 180 120 180 300 C180 480 450 480 600 300 C750 120 1020 120 1020 300 C1020 480 750 480 600 300 Z" />
+    <path class="ambient__infinity-pulse" pathLength="1000"
+          d="M600 300 C450 120 180 120 180 300 C180 480 450 480 600 300 C750 120 1020 120 1020 300 C1020 480 750 480 600 300 Z" />
+  </svg>
+
+  <svg class="ambient__waves" viewBox="0 0 1440 320" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="wave-stroke" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#ff6aa8" />
+        <stop offset=".5" stop-color="#a06bff" />
+        <stop offset="1" stop-color="#5bc8ff" />
+      </linearGradient>
+    </defs>
+    <path class="wave-base"
+          d="M0 160 C45 60 135 60 180 160 S315 260 360 160 S495 60 540 160 S675 260 720 160 S855 60 900 160 S1035 260 1080 160 S1215 60 1260 160 S1395 260 1440 160" />
+    <path class="wave-pulse" pathLength="1000"
+          d="M0 160 C45 60 135 60 180 160 S315 260 360 160 S495 60 540 160 S675 260 720 160 S855 60 900 160 S1035 260 1080 160 S1215 60 1260 160 S1395 260 1440 160" />
+    <g transform="translate(0 36)">
+      <path class="wave-base"
+            d="M0 160 C45 60 135 60 180 160 S315 260 360 160 S495 60 540 160 S675 260 720 160 S855 60 900 160 S1035 260 1080 160 S1215 60 1260 160 S1395 260 1440 160" />
+      <path class="wave-pulse wave-pulse--alt" pathLength="1000"
+            d="M0 160 C45 60 135 60 180 160 S315 260 360 160 S495 60 540 160 S675 260 720 160 S855 60 900 160 S1035 260 1080 160 S1215 60 1260 160 S1395 260 1440 160" />
+    </g>
+  </svg>
+</div>
 
 <!-- Confetti lives on its own canvas, above everything, never eats clicks -->
 <canvas id="confetti" aria-hidden="true"></canvas>
@@ -26,9 +64,25 @@
     </div>
     <div class="masthead__tools">
       <span class="chip chip--order">Protocol: Role → Context → Task → Format → Tone → Limits</span>
-      <span class="stamp" aria-hidden="true">Prompt<br />Chef<br />Vol. I</span>
+      <span class="stamp" aria-hidden="true">∞<br />Signal<br />Live</span>
     </div>
   </header>
+
+  <div class="signal-strip" aria-hidden="true">
+    <svg viewBox="0 0 1440 70" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="strip-stroke" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#ff6aa8" />
+          <stop offset=".5" stop-color="#a06bff" />
+          <stop offset="1" stop-color="#5bc8ff" />
+        </linearGradient>
+      </defs>
+      <path class="signal-strip__base"
+            d="M0 35 C45 8 135 8 180 35 S315 62 360 35 S495 8 540 35 S675 62 720 35 S855 8 900 35 S1035 62 1080 35 S1215 8 1260 35 S1395 62 1440 35" />
+      <path class="signal-strip__pulse" pathLength="1000"
+            d="M0 35 C45 8 135 8 180 35 S315 62 360 35 S495 8 540 35 S675 62 720 35 S855 8 900 35 S1035 62 1080 35 S1215 8 1260 35 S1395 62 1440 35" />
+    </svg>
+  </div>
 
   <main class="kitchen">
 
@@ -121,7 +175,7 @@
   </main>
 
   <footer class="footer">
-    <p>Prompt Chef · Vol. I · hand-set in Georgia &amp; Courier · no frameworks, no trackers</p>
+    <p>Prompt Chef · vanilla HTML, CSS &amp; JS · signal ∞ steady · no trackers</p>
   </footer>
 </div>
 
@@ -130,6 +184,6 @@
 <!-- Announced only when something actually changes, not on every keystroke -->
 <p class="sr-only" id="kitchen-live" role="status" aria-live="polite"></p>
 
-<script src="app.js?v=5"></script>
+<script src="app.js?v=6"></script>
 </body>
 </html>

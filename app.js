@@ -687,7 +687,7 @@ function toast(message) {
 const Confetti = (() => {
   const canvas = document.getElementById('confetti');
   const ctx = canvas.getContext('2d');
-  const COLORS = ['#ff2e88', '#21e6ff', '#a855f7', '#a8ff2e', '#ff3b5c', '#ffb02e', '#ffffff'];
+  const COLORS = ['#ff6aa8', '#a06bff', '#5bc8ff', '#ffb3d1', '#cfb2ff', '#a8e9ff', '#ffffff'];
   let bits = [];
   let raf = null;
 

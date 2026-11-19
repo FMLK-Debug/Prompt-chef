@@ -9,11 +9,11 @@ from the pantry, drop them in the pot, watch the flavor meter, and serve.
 
 No build step, no dependencies — just open it.
 
-**Look:** a vintage recipe book on a dark wooden desk — warm parchment cards,
-brown ink, brick-red headings, gold rules, and letterpress-style buttons.
-Georgia for reading, Courier for the prompt itself, and Verdana for the small
-labels and hints (kept at 12px or larger for legibility). No gradients, no
-glow, no animations.
+**Look:** a modern signal deck — deep indigo glass, pink → purple → blue
+gradients, pill labels, and animated infinity / frequency lines. System sans
+for the interface, monospace for the prompt itself, and small text kept at
+12px or larger for legibility. The motion is decorative and respects
+`prefers-reduced-motion`.
 
 ## Run it
 
@@ -30,7 +30,7 @@ Opening `index.html` directly works too (the clipboard falls back to an
 | Piece | Where |
 | --- | --- |
 | Markup | `index.html` |
-| Warm kitchen theme + responsive layout | `styles.css` |
+| Modern signal theme + responsive layout | `styles.css` |
 | State, prompt builder, flavor rules, confetti | `app.js` |
 | Behaviour tests | `test/prompt-chef.test.js` |
 
