@@ -25,6 +25,19 @@ python3 -m http.server 8000     # then visit http://localhost:8000
 Opening `index.html` directly works too (the clipboard falls back to an
 `execCommand` copy when the file:// clipboard API is unavailable).
 
+## Deploying
+
+The live site is served from the `gh-pages` branch. After changing the site on
+`main`, rebuild that branch and push it with:
+
+```bash
+./scripts/deploy-pages.sh
+```
+
+The script copies `index.html`, `styles.css` and `app.js` into a fresh
+`gh-pages` branch and force-pushes it. GitHub Pages then publishes
+<https://fmlk-debug.github.io/Prompt-chef/>.
+
 ## How it works
 
 | Piece | Where |
@@ -100,7 +113,7 @@ The meter tells you which rule tripped in plain language underneath the bar, so
   buttons carry their own labels.
 - Status changes are announced through a screen-reader-only live region that
   dedupes itself, so typing doesn't flood a screen reader.
-- Visible focus rings, and the interface uses solid colours only — no glow and
-  no animation is required to use the app.
+- Visible focus rings. Motion (signal lines, live dot, confetti) is decorative,
+  and `prefers-reduced-motion` switches it off.
 - All text clears WCAG AA (4.5:1) against the panel it sits on, including
   input placeholders — decoration is never the only thing carrying contrast.
