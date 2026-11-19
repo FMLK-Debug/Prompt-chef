@@ -113,7 +113,6 @@ a:hover { color: var(--blue-light); }
 
 .ambient__infinity-pulse {
   fill: none;
-  stroke: url(#infinity-stroke);
   stroke-width: 2.5;
   stroke-linecap: round;
   stroke-dasharray: 80 420;
@@ -139,7 +138,6 @@ a:hover { color: var(--blue-light); }
 
 .wave-pulse {
   fill: none;
-  stroke: url(#wave-stroke);
   stroke-width: 1.6;
   stroke-linecap: round;
   stroke-dasharray: 140 360;
@@ -335,7 +333,6 @@ a:hover { color: var(--blue-light); }
 
 .signal-strip__pulse {
   fill: none;
-  stroke: url(#strip-stroke);
   stroke-width: 2;
   stroke-linecap: round;
   stroke-dasharray: 130 370;
