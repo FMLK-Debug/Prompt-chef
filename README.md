@@ -27,7 +27,11 @@ Opening `index.html` directly works too (the clipboard falls back to an
 
 ## Deploying
 
-Every push to `main` publishes the site with GitHub Actions
+GitHub Pages must be enabled once for the repository: **Settings → Pages →
+Build and deployment → Source: GitHub Actions**. (`GITHUB_TOKEN` cannot create
+the Pages site itself, so this one-time step cannot be automated.)
+
+After that, every push to `main` publishes the site with GitHub Actions
 (`.github/workflows/pages.yml`), which uploads the static files as a Pages
 artifact and deploys it. The workflow also runs on demand from the Actions tab.
 
