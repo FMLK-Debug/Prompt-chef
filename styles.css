@@ -1061,10 +1061,16 @@ a:hover { color: var(--blue-light); }
 
 /* ---------- Reduced motion ---------- */
 
+/* Keep the slow ambient signal lines moving — they are the signature visual —
+   but calm them down and remove the snappier UI motion. Some laptops report
+   `prefers-reduced-motion: reduce` when the OS "animation effects" setting is
+   off, which used to freeze these lines while phones kept moving. */
 @media (prefers-reduced-motion: reduce) {
-  .ambient__infinity-pulse,
-  .wave-pulse,
-  .signal-strip__pulse,
+  .ambient__infinity-pulse { animation-duration: 18s !important; }
+  .wave-pulse { animation-duration: 15s !important; }
+  .wave-pulse--alt { animation-duration: 24s !important; }
+  .signal-strip__pulse { animation-duration: 14s !important; }
+
   .tagline::before {
     animation: none !important;
   }
