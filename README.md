@@ -27,18 +27,19 @@ Opening `index.html` directly works too (the clipboard falls back to an
 
 ## Deploying
 
-GitHub Pages must be enabled once for the repository: **Settings → Pages →
-Build and deployment → Source: GitHub Actions**. (`GITHUB_TOKEN` cannot create
-the Pages site itself, so this one-time step cannot be automated.)
+The live site is served from the `gh-pages` branch. After changing the site on
+`main`, rebuild that branch and push it with:
 
-After that, every push to `main` publishes the site with GitHub Actions
-(`.github/workflows/pages.yml`), which uploads the static files as a Pages
-artifact and deploys it. The workflow also runs on demand from the Actions tab.
+```bash
+./scripts/deploy-pages.sh
+```
 
-<https://fmlk-debug.github.io/Prompt-chef/>
+The script copies `index.html`, `styles.css` and `app.js` into a fresh
+`gh-pages` branch and force-pushes it. GitHub Pages then publishes
+<https://fmlk-debug.github.io/Prompt-chef/>.
 
-`scripts/deploy-pages.sh` is kept as a manual fallback: it rebuilds the legacy
-`gh-pages` branch and force-pushes it.
+Pushing `gh-pages` also re-enables GitHub Pages if it was turned off, so this
+is the fix when the live URL starts returning 404.
 
 ## How it works
 
